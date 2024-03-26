@@ -1,5 +1,5 @@
 import Buttons from "../components/Buttons";
-import { currentStatus } from "../states/features/MovieSlice";
+import { currentStatus, filteredMovies } from "../states/features/MovieSlice";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 import { checkStatus } from "../functions/checkStatus";
@@ -8,12 +8,14 @@ const HomePage = () => {
   //
   const status = useSelector(currentStatus);
 
+  const filtereds = useSelector(filteredMovies);
+
   // check status and return component
   let content = checkStatus(status);
 
   return (
     <div className="w-11/12 mx-auto flex flex-col items-center justify-center">
-      <Buttons />
+      {filtereds?.length ? <Buttons /> : <></>}
       <motion.div
         layout
         initial={{ opacity: 0, x: 50 }}

@@ -80,8 +80,8 @@ const Movies = () => {
           <p className="text-2xl">There is no movie for this interest</p>
           <button
             onClick={() => dispatch(filter(0))}
-            className=" px-3 py-2 mx-auto text-sm w-6/12 text-white rounded-md bg-slate-600 border border-solid shadow-sm transition-all duration-300
-        hover:cursor-pointer hover:text-black hover:border-black hover:outline-slate-600 hover:bg-white hover:outline-8"
+            className=" px-3 py-2 mx-auto text-sm w-6/12 text-white rounded-md bg-gray-800 border border-solid shadow-sm transition-all duration-300
+        hover:cursor-pointer hover:text-black hover:border-black hover:outline-gray-800 hover:bg-white hover:outline-8"
           >
             Back to all categories
           </button>

@@ -7,7 +7,7 @@ import film from "../../assets/film-reel.svg";
 import { NavLink } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", to: "/", current: true },
+  { name: "Home", to: "/", current: false },
   { name: "Popular", to: "/popular", current: false },
   { name: "Recommended", to: "/recommended", current: false },
 ];

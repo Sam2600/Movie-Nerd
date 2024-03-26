@@ -1,8 +1,10 @@
-import { createBrowserRouter, Link } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import DefaultLayout from "../Layout/DefaultLayout";
 import MovieDetails from "../pages/MovieDetails";
 import { TestingPage } from "../pages/TestingPage";
+import { NotFound } from "../pages/NotFound";
+import { Logout } from "../pages/Logout";
 
 export const routes = createBrowserRouter([
   {
@@ -18,21 +20,25 @@ export const routes = createBrowserRouter([
         element: <MovieDetails />,
       },
       {
-        path: "/testing",
+        path: "/popular",
+        element: <TestingPage />,
+      },
+      {
+        path: "/recommended",
         element: <TestingPage />,
       },
     ],
   },
-
+  {
+    path: "/logout",
+    element: <Logout />,
+  },
+  {
+    path: "/testing",
+    element: <TestingPage />,
+  },
   {
     path: "/*",
-    element: (
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-3xl text-black my-14">No Process in this page.</h1>
-        <Link className="underline text-blue-400 text-lg" to="/">
-          Back To Home
-        </Link>
-      </div>
-    ),
+    element: <NotFound />,
   },
 ]);
