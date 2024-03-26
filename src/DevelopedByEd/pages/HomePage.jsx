@@ -14,7 +14,7 @@ const HomePage = () => {
   let content = checkStatus(status);
 
   return (
-    <div className="w-11/12 mx-auto flex flex-col items-center justify-center">
+    <div className="w-11/12 mx-auto flex flex-col items-center justify-center overflow-hidden">
       {filtereds?.length ? <Buttons /> : <></>}
       <motion.div
         layout
