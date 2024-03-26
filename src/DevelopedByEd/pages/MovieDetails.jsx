@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import arrow from "../../assets/arrow.gif";
 
 const MovieDetails = () => {
   const { id } = useParams(); // catching route's param
@@ -107,13 +108,14 @@ const MovieDetails = () => {
         </div>
 
         <div className="flex-col w-10/12 sm:w-10/12 md:w-10/12 lg:w-full ">
-          <p className=" text-md sm:text-md text-black md:text-lg my-5 hover:text-slate-500 hover:cursor-pointer">
+          <p className=" text-md sm:text-md text-black md:text-lg my-5 hover:text-slate-500">
             Movies You might also like.
           </p>
 
-          <p className="text-md sm:text-sm md:text-sm my-5 hover:text-slate-500 hover:cursor-pointer">
-            Scroll horizontal to explore more
-          </p>
+          <div className="text-md flex gap-3 items-center sm:text-sm md:text-sm my-5 hover:text-slate-500">
+            Scroll horizontal to explore more{" "}
+            <img className="w-8 h-8" src={arrow} alt="" />
+          </div>
 
           <section className="flex justify-start items-start">
             <Splide

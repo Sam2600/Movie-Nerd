@@ -28,15 +28,15 @@ const Movies = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col my-3 items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <PaginatedMovies movies={paginatedMovies} />
 
       {paginatedMovies.length ? (
         <ReactPaginate
-          className="flex flex-row gap-4"
+          className="flex flex-row gap-4 mt-5 mb-10"
           breakLabel={<span className="mx-2">...</span>}
           nextLabel={
-            <span className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ const Movies = () => {
             </span>
           }
           previousLabel={
-            <span className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -72,8 +72,8 @@ const Movies = () => {
           pageCount={totalPages}
           //
           containerClassName="flex items-center justify-center my-4"
-          pageClassName="block border- border-solid border-lightGray hover:bg-gray-200 w-8 h-8 flex items-center justify-center rounded-md"
-          activeClassName="bg-slate-500 text-white"
+          pageClassName="block border- border-solid border-lightGray hover:bg-black hover:text-white w-8 h-8 flex items-center justify-center rounded-md"
+          activeClassName="bg-black text-white"
         />
       ) : (
         <div className="flex flex-col justify-center align-middle gap-5">

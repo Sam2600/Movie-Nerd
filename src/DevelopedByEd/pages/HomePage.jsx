@@ -11,9 +11,8 @@ const HomePage = () => {
   let content = checkStatus(status);
 
   return (
-    <div className=" w-10/12 m-auto my-5 flex flex-col items-center justify-center">
+    <div className="w-11/12 mx-auto flex flex-col items-center justify-center">
       <Buttons />
-
       <motion.div
         layout
         initial={{ opacity: 0, x: 50 }}
