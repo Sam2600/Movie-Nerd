@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { checkStatus } from "../functions/checkStatus";
 
 const HomePage = () => {
+  //
   const status = useSelector(currentStatus);
 
   // check status and return component

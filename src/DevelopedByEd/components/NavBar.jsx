@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 import { FaHamburger } from "react-icons/fa";
 import SearchInput from "./SearchInput";
 import { Disclosure } from "@headlessui/react";
@@ -19,7 +18,7 @@ function classNames(...classes) {
 
 const NavBar = ({ collapsed, setCollapsed }) => {
   return (
-    <Disclosure as="nav" className="bg-black">
+    <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-5 sm:px-1 lg:px-1">

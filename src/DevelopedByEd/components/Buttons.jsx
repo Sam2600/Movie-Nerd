@@ -16,7 +16,7 @@ const Buttons = () => {
         <Tooltip label={genre.name} aria-label="A tooltip">
           <button
             onClick={() => dispatch(filter(genre.id))}
-            className="w-20 px-2 py-2 hover:border-black text-sm rounded-md text-white bg-black border border-solid shadow-sm transition-all duration-300 hover:cursor-pointer hover:outline-black hover:bg-white hover:text-black "
+            className="w-20 px-2 py-2 hover:border-black text-sm rounded-md text-white bg-gray-800 border border-solid shadow-sm transition-all duration-300 hover:cursor-pointer hover:outline-black hover:bg-white hover:text-black "
           >
             {genre.name.length > 5
               ? `${genre.name.substring(0, 5)}...`
@@ -32,7 +32,7 @@ const Buttons = () => {
       <div className="w-2/12 m-auto flex items-center">
         <button
           onClick={() => dispatch(filter(0))}
-          className=" py-2 px-3 text-sm text-white rounded-md bg-black border border-solid shadow-sm transition-all duration-300
+          className=" py-2 px-3 text-sm text-white rounded-md bg-gray-800 border border-solid shadow-sm transition-all duration-300
         hover:cursor-pointer hover:text-black hover:border-black hover:outline-slate-600 hover:bg-white hover:outline-8"
         >
           ALL
