@@ -7,10 +7,12 @@ import {
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import arrow from "../../assets/arrow.gif";
 
 const MovieDetails = () => {
+
   const { id } = useParams(); // catching route's param
   const movie = useSelector((state) => searchedMovieById(state, Number(id))); // getting the Movie filtered by param(id)
   const movies = useSelector(selectAllMovies);
@@ -39,7 +41,7 @@ const MovieDetails = () => {
   ); // then we filter the objects that are empty inside the genres array (means that movie is not match the genres with this current movie)
 
   return (
-    <div className="flex flex-wrap w-11/12 p-2">
+    <div className="flex flex-wrap w-11/12 h-fit">
       <motion.div
         className="min-w-custom flex flex-col w-4/12 sm:flex-col sm:w-8/12 sm:ms-12 md:flex-row md:gap-3 md:w-11/12 lg:flex-col lg:my-5 lg:w-4/12 px-10 m-auto"
         initial={{ opacity: 0, x: "-100vw" }}
@@ -108,24 +110,27 @@ const MovieDetails = () => {
         </div>
 
         <div className="flex-col w-10/12 sm:w-10/12 md:w-10/12 lg:w-full ">
-          <p className=" text-md sm:text-md text-black md:text-lg my-5 hover:text-slate-500">
-            Movies You might also like.
+          <p className=" text-md sm:text-md text-black md:text-lg my-5 flex gap-4">
+            Movies You might also like <img className="w-8 h-8" src={arrow} alt="" />
           </p>
 
-          <div className="text-md flex gap-3 items-center sm:text-sm md:text-sm my-5 hover:text-slate-500">
-            Scroll horizontal to explore more{" "}
-            <img className="w-8 h-8" src={arrow} alt="" />
-          </div>
-
-          <section className="flex justify-start items-start">
+          <section className="flex justify-start items-start mb-5">
             <Splide
               options={{
-                arrows: false,
-                drag: "free",
                 perPage: 5,
-                pagination: false,
+                drag: "free",
+                type: "loop",
                 rewind: true,
+                arrows: false,
+                pagination: false,
+                autoScroll: {
+                  pauseOnHover: false,
+                  pauseOnFocus: false,
+                  rewind: false,
+                  speed: 0.5
+                }
               }}
+              extensions={{ AutoScroll }}
             >
               {youMightAlsoLikeMovies.map((movie) => {
                 return (
