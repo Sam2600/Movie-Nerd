@@ -10,7 +10,7 @@ import BubbleChartRoundedIcon from "@mui/icons-material/BubbleChartRounded";
 
 export const SideBar = ({ collapsed }) => {
   return (
-    <div>
+    <div className="border-r shadow-2xl border-gray-400">
       <Sidebar collapsed={collapsed}>
         <Menu>
           <Link to={"/"}>
